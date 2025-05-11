@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-style: normal;
+  font-weight: 200 300 400 500 600 700;
+  font-display: swap;
+  src: url('/src/assets/ClashDisplay-Variable.ttf') format('truetype');
+}
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-display: 'ClashDisplay';
+  --font-body: 'Quicksand', sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -115,6 +126,49 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
+}
+
+.shadow-btn {
+  box-shadow:
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 0 0 1px rgba(4, 10, 8, 0.15),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.20),
+    0 1px 2px 0 rgba(4, 10, 8, 0.05)
+}
+
+.stroke-btn {
+  border: 1px solid;
+  border-width: 1px 0 0 0;
+  border-image-slice: 1;
+  border-image-source: radial-gradient(rgba(255, 255, 255, 0.4), #ffffff00);
+}
+
+.shadow-btn-secondary {
+  box-shadow:
+    inset 0 0 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.05),
+    0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+.bg-badge {
+  background: radial-gradient(at 0 100%,rgba(255, 255, 255, 0.1), rgba(60, 72, 83, 0.1));
+  backdrop-filter: blur(53px);
+}
+
+.shadow-badge {
+  box-shadow: 0 36px 68px -22px rgba(0, 0, 0, 0.6);
+}
+
+.stroke-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding-top: 1px;
+  background: radial-gradient(rgba(255, 255, 255, 1), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
 }
