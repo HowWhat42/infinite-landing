@@ -177,6 +177,7 @@
   background-image: url('/src/assets/crypto.png');
   background-repeat: repeat;
   opacity: 0.4;
+  background-size: 20%;
   mask-image: url('/src//assets/mask.png');
   mask-mode: alpha;
   mask-repeat: no-repeat;
@@ -202,4 +203,8 @@
   mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
   pointer-events: none;
   z-index: 1;
+}
+
+.shadow-title {
+  text-shadow: 0 8px 8px rgba(20, 19, 28, 1);
 }
