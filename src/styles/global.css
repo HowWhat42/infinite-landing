@@ -172,3 +172,20 @@
   border-radius: inherit;
   mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
 }
+
+.bg-navbar {
+  background: radial-gradient(at 100% 100%, rgba(106, 106, 106, 0.6), rgba(33, 39, 45, 0.6));
+  backdrop-filter: blur(34px);
+}
+
+.stroke-navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding-top: 1px;
+  background: radial-gradient(rgba(255, 255, 255, 1), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  pointer-events: none;
+  z-index: 1;
+}

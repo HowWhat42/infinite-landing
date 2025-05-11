@@ -1,10 +1,11 @@
 ---
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import hero from "../assets/hero.png";
+import Navbar from "./Navbar.astro";
 ---
 
-<div class="p-8 bg-neutral-900">
-  <Button>Je lance mon projet</Button>
-  <Button variant='secondary'>Je lance mon projet</Button>
-  <Badge>Déjà +10 projets menés avec succés</Badge>
+<div class="">
+  <img class="fixed top-0 left-0 w-full h-full -z-10" src={hero.src} alt="" fetchpriority="high" />
+  <div class="h-full justify-center">
+    <Navbar />
+  </div>
 </div>
