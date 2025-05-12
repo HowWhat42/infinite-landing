@@ -6,12 +6,12 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 ---
 
-<div class="">
+<div>
   <img class="fixed top-0 left-0 w-full h-full -z-10" src={hero.src} alt="" fetchpriority="high" />
   <div class="bg-hero fixed bottom-0 right-0 w-full h-full -z-10" />
   <div class="h-full flex flex-col justify-center">
     <Navbar />
-    <div class="px-32 mt-48 flex justify-between items-center">
+    <div class="px-32 my-52 flex justify-between items-center">
       <div class="flex flex-col justify-center gap-8">
         <div class="max-w-[690px] flex flex-col gap-6">
           <Badge>Déjà +10 projets menés avec succès</Badge>
@@ -23,8 +23,11 @@ import { Button } from "./ui/button";
           <p class="text-lg text-white/70 font-medium">Chez Infinite Lab, nous nous engageons à mener chaque projet avec passion et précision. De la conception à l'hébergement, nous faisons de vos visions une réalité numérique.</p>
         </div>
         <div class="flex gap-4">
-          <Button>Recevoir un devis personnalisé</Button>
-          <Button variant="secondary">Contactez-nous</Button>
+          <div class="relative">
+            <div class="absolute z-[-1] -top-4 -left-2 bg-radial from-[#9A7CFF] from-[37%] to-[#0E0AA200] w-[324px] h-[70px] blur-2xl" />
+            <Button size="lg">Recevoir un devis personnalisé</Button>
+          </div>
+          <Button variant="secondary" size="lg">Contactez-nous</Button>
         </div>
       </div>
       <img class="h-full -mb-40" src={logoGlassy.src} alt="" fetchpriority="high" />

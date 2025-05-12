@@ -1,0 +1,41 @@
+---
+import { CalendarClockIcon, CircleUserIcon, CommandIcon, LocateFixedIcon } from "lucide-react";
+import ArgumentCard from "./ArgumentCard.astro";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+---
+
+<div class="bg-neutral-950 flex flex-col justify-center items-center gap-20 py-32 rounded-t-[40px]">
+  <div class="flex flex-col gap-4 justify-center items-center max-w-3xl">
+    <Badge>Pourquoi choisir Infinite Lab ?</Badge>
+    <h1 class="text-center font-display text-6xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Un partenaire technique, pas juste un prestataire</h1>
+    <p class="text-lg text-center text-white/70 font-medium max-w-lg">
+      Contrairement à une agence impersonnelle ou un freelance
+      difficile à suivre, Infinite Lab vous propose :
+    </p>
+  </div>
+  <div class="flex">
+    <ArgumentCard text="Un interlocuteur unique, à l'écoute et disponible">
+      <div class="relative p-6 bg-black w-fit rounded-2xl stroke-argument-icon">
+        <CircleUserIcon size={20} className="text-white" />
+      </div>
+    </ArgumentCard>
+    <ArgumentCard text="Une approche sur-mesure, adaptée à vos enjeux réels">
+      <div class="relative p-6 bg-black w-fit rounded-2xl stroke-argument-icon">
+        <LocateFixedIcon size={20} className="text-white" />
+      </div>
+    </ArgumentCard>
+    <ArgumentCard text="Un accompagnement complet : design, dev, SEO, hébergement">
+      <div class="relative p-6 bg-black w-fit rounded-2xl stroke-argument-icon">
+        <CommandIcon size={20} className="text-white" />
+      </div>
+      
+    </ArgumentCard>
+    <ArgumentCard text="Des résultats concrets, dans les délais">
+      <div class="relative p-6 bg-black w-fit rounded-2xl stroke-argument-icon">
+        <CalendarClockIcon size={20} className="text-white" />
+      </div>
+    </ArgumentCard>
+  </div>
+  <Button>Découvrir notre méthode</Button>
+</div>

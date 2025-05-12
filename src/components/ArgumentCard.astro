@@ -1,0 +1,8 @@
+---
+const { text } = Astro.props;
+---
+
+<div class="relative flex flex-col gap-10 px-8 py-16 max-w-[320px] bg-neutral-700/10 rounded-lg bg-argument-card stroke-argument-card">
+  <slot />
+  <p class="text-xl text-white font-semibold">{text}</p>
+</div>

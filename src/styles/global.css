@@ -208,3 +208,30 @@
 .shadow-title {
   text-shadow: 0 8px 8px rgba(20, 19, 28, 1);
 }
+
+.bg-argument-card {
+  box-shadow: -40px 0 67px -22px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.stroke-argument-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(at 0% 100%, rgba(255, 255, 255, 0.4), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  z-index: 1;
+}
+
+.stroke-argument-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(at 50% 100%, rgba(255, 255, 255, 0.4), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  z-index: 1;
+}
