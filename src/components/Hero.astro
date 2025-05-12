@@ -1,16 +1,14 @@
 ---
 import hero from "../assets/hero.png";
 import logoGlassy from "../assets/logo-glassy.png";
-import Navbar from "./Navbar.astro";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 ---
 
 <div>
-  <img class="fixed top-0 left-0 w-full h-full -z-10" src={hero.src} alt="" fetchpriority="high" />
-  <div class="bg-hero fixed bottom-0 right-0 w-full h-full -z-10" />
+  <img class="fixed top-0 left-0 w-full h-screen -z-10" src={hero.src} alt="" fetchpriority="high" />
+  <div class="bg-hero fixed bottom-0 right-0 w-full h-screen -z-10" />
   <div class="h-full flex flex-col justify-center">
-    <Navbar />
     <div class="px-32 my-52 flex justify-between items-center">
       <div class="flex flex-col justify-center gap-8">
         <div class="max-w-[690px] flex flex-col gap-6">

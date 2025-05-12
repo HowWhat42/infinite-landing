@@ -178,7 +178,7 @@
   background-repeat: repeat;
   opacity: 0.4;
   background-size: 20%;
-  mask-image: url('/src//assets/mask.png');
+  mask-image: url('/src/assets/mask.png');
   mask-mode: alpha;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -187,6 +187,22 @@
   mask-size: 100%, 100%;
   mask-composite: add;
 }
+
+.bg-footer {
+  background-image: url('/src/assets/crypto.png');
+  background-repeat: repeat;
+  opacity: 0.4;
+  background-size: 20%;
+  mask-image: url('/src/assets/mask-footer.png');
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-clip: border-box;
+  mask-origin: border-box;
+  mask-size: 100%, 100%;
+  mask-composite: add;
+}
+
 
 .bg-navbar {
   background: radial-gradient(at 100% 100%, rgba(106, 106, 106, 0.6), rgba(33, 39, 45, 0.6));
