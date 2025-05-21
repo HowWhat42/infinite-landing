@@ -1,4 +1,5 @@
 ---
+import { ChevronDown } from "lucide-react";
 import { Badge } from "./ui/badge";
 ---
 
@@ -7,5 +8,51 @@ import { Badge } from "./ui/badge";
     <Badge>FAQ</Badge>
     <h1 class="text-center font-display text-5xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Questions fréquentes</h1>
     <p class="text-lg text-white/70 font-normal">Vous vous demandez encore si Infinite Lab est fait pour vous ?</p>
+  </div>
+  <div class="w-full max-w-3xl space-y-4">
+    <details class="group bg-neutral-900/50 rounded-xl overflow-hidden border border-white/10">
+      <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
+        Fournissez-vous un accompagnement après la mise en ligne
+        <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
+      </summary>
+      <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
+        <p>Nous proposons des packs de maintenance pour :</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li>Mise à jour et évolutions du site</li>
+          <li>Support et assistance technique</li>
+          <li>Optimisation SEO et performance</li>
+        </ul>
+      </div>
+    </details>
+    <details class="group bg-neutral-900/50 rounded-xl overflow-hidden border border-white/10">
+      <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
+        Quels sont vos délais de réalisation ?
+        <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
+      </summary>
+      <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
+        <p>Les délais varient selon la complexité du projet. En général :</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li>Site vitrine : 2-4 semaines</li>
+          <li>Application web : 4-8 semaines</li>
+          <li>E-commerce : 6-12 semaines</li>
+        </ul>
+      </div>
+    </details>
+    <details class="group bg-neutral-900/50 rounded-xl overflow-hidden border border-white/10">
+      <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
+        Comment se déroule un projet avec Infinite Lab ?
+        <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
+      </summary>
+      <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
+        <ol class="list-decimal list-inside mt-2 space-y-1">
+          <li>Consultation initiale gratuite</li>
+          <li>Analyse des besoins et proposition détaillée</li>
+          <li>Validation du design et des fonctionnalités</li>
+          <li>Développement avec points réguliers</li>
+          <li>Tests et optimisations</li>
+          <li>Mise en production et formation</li>
+        </ol>
+      </div>
+    </details>
   </div>
 </div>
