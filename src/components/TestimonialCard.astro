@@ -1,0 +1,23 @@
+---
+import { StarIcon } from "lucide-react";
+
+const { description, name, company, job, image } = Astro.props;
+---
+
+<div class="text-white max-w-[420px] flex flex-col gap-6 p-8 rounded-2xl relative bg-testimonial-card stroke-testimonial-card">
+  <div class="flex gap-1">
+    <StarIcon size={20} fill="white" />
+    <StarIcon size={20} fill="white" />
+    <StarIcon size={20} fill="white" />
+    <StarIcon size={20} fill="white" />
+    <StarIcon size={20} fill="white" />
+  </div>
+  <p class="text-lg">"{description}"</p>
+  <div>
+    <img src={image} />
+    <div>
+      <p class="font-display">{name}</p>
+      <p>{job}, {company}</p>
+    </div>
+  </div>
+</div>

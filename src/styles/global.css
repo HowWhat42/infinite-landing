@@ -282,3 +282,21 @@
   mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
   z-index: 1;
 }
+
+.bg-testimonial-card {
+  box-shadow: -40px 0 67px -22px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(30px);
+}
+
+.stroke-testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: 
+    radial-gradient(at 0 100%, rgba(255, 255, 255, 0.4), #ffffff00),
+    radial-gradient(at 100% 0, rgba(255, 255, 255, 0.4), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  z-index: 1;
+}

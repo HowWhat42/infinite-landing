@@ -1,4 +1,5 @@
 ---
+import TestimonialCard from "./TestimonialCard.astro";
 import { Badge } from "./ui/badge";
 ---
 
@@ -7,5 +8,39 @@ import { Badge } from "./ui/badge";
     <Badge>Témoignages</Badge>
     <h2 class="text-center font-display text-5xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Ce que disent nos clients</h2>
     <p class="text-lg text-white/70 font-normal">Des résultats, mais surtout des relations humaines réussies</p>
+  </div>
+  <div class="flex flex-wrap justify-center items-start gap-8 max-w-[1400px] relative">
+    <div class="absolute left-1/2 top-1/2 -translate-1/2 rounded-full blur-[200px] w-[768px] h-[768px] bg-radial from-20% from-[#BD66FE] via-40% via-[#5C3AD8] to-[57%] to-[#5C3AD800]" />
+    <TestimonialCard
+      description=`D'un professionnalisme irréprochable !
+      A l'écoute sur l'ensemble de notre projet.
+      Pédagogique dans l'explication des possibles.
+      Une vraie réussite dans notre collaboration.
+      Merci !`
+      name="Jules"
+      company="Air Rental"
+      job="Directeur"
+    />
+    <TestimonialCard
+      description=`Sa maîtrise technique est impressionnante, et il excelle également dans la gestion de l'hébergement, offrant un accompagnement de qualité.
+      Professionnel et compétent, il est hautement recommandé pour tout projet de développement, offrant une solution complète et fiable.`
+      name="Killian"
+      company="Teasquare"
+      job="Fondateur"
+    />
+    <TestimonialCard
+      description=`Excellente prestation de Charles.
+      En prime d'un travail de qualité, Charles a une compréhension fine des projets et une communication aisée qui permet une collaboration à la hauteur de nos espérances.
+      Je recommande sans hésiter !`
+      name="Ludovic"
+      company="Figue.io"
+      job="Chef de projet"
+    />
+    <TestimonialCard
+      description=`Nous avons eu le plaisir de collaborer avec Charles sur un projet de développement impliquant une stack technique variée. Volontaire, disponible et efficace, il a su s'adapter aux besoins de l'équipe et contribuer activement à l'avancement du projet. Son sérieux et sa capacité d'intégration ont été appréciés.`
+      name="Benjamin"
+      company="Mentorshow"
+      job="COO"
+    />
   </div>
 </div>
