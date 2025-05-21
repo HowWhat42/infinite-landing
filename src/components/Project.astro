@@ -1,0 +1,25 @@
+---
+import { ChevronRightIcon } from "lucide-react";
+
+const { title, description, stack, link, image } = Astro.props;
+---
+
+<div class="flex items-center gap-20 py-12">
+  <div class="w-[620px] text-white flex flex-col gap-8">
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2">
+        <h3 class="font-display text-4xl font-medium">{title}</h3>
+        <p class="">{description}</p>
+      </div>
+      <div class="flex gap-2">
+        {stack.map((tech: string) => (
+          <span class="relative rounded-lg px-2.5 py-1 stroke-tech-card">{tech}</span>
+        ))}
+      </div>
+    </div>
+    <button class="cursor-pointer text-white underline-offset-4 hover:underline flex items-center gap-2"><p class="font-medium">Découvrir le projet</p><ChevronRightIcon size={24} /></button>
+  </div>
+  <div class="w-[616px] h-[500px] relative flex items-center justify-center stroke-project-card rounded-2xl bg-gradient-to-t from-[#a95dd81e] to-[83%] to-[#36435E00]">
+    <img src={image.src} alt={title} />
+  </div>
+</div>
