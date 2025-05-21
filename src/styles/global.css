@@ -251,3 +251,8 @@
   mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
   z-index: 1;
 }
+
+.bg-stat-card {
+  box-shadow: -40px 0 67px -22px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(160px);
+}
