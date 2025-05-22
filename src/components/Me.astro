@@ -1,12 +1,18 @@
 ---
+import Profile from "../assets/me.png";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 ---
 
 <div class="bg-neutral-950 py-32 px-16 flex justify-center items-center gap-20">
-  <div class="w-[440px] h-[600px] rounded-3xl relative stroke-project-card">
-    <div>
-      <p>Charles L.</p>
+  <div class="w-[441px] h-[603px] rounded-3xl relative stroke-project-card">
+    <img src={Profile.src} alt="Charles L." class="absolute top-0 left-0" />
+    <div class="absolute top-1/2 left-1/2 -translate-1/2 rounded-3xl border border-white/20 w-[417px] h-[580px]" />
+    <div class="absolute top-6 left-1/2 -translate-x-1/2">
+      <p class="text-white uppercase font-display text-xl">CEO Infinite Lab</p>
+    </div>
+    <div class="absolute bottom-10 left-8">
+      <p class="text-white text-xl">Charles L.</p>
       <div></div>
     </div>
   </div>
