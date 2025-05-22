@@ -13,8 +13,8 @@ const { description, name, company, job, image } = Astro.props;
     <StarIcon size={20} fill="white" />
   </div>
   <p class="text-lg">"{description}"</p>
-  <div>
-    <img src={image} />
+  <div class="flex items-center gap-4">
+    <img src={image} alt={company} class="max-w-10" />
     <div>
       <p class="font-display">{name}</p>
       <p>{job}, {company}</p>

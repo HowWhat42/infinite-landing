@@ -1,4 +1,8 @@
 ---
+import AirRental from "../assets/air-rental.png";
+import Figue from "../assets/figue.png";
+import Mentorshow from "../assets/mentorshow.png";
+import Teasquare from "../assets/teasquare.png";
 import TestimonialCard from "./TestimonialCard.astro";
 import { Badge } from "./ui/badge";
 ---
@@ -20,6 +24,7 @@ import { Badge } from "./ui/badge";
       name="Jules"
       company="Air Rental"
       job="Directeur"
+      image={AirRental.src}
     />
     <TestimonialCard
       description=`Sa maîtrise technique est impressionnante, et il excelle également dans la gestion de l'hébergement, offrant un accompagnement de qualité.
@@ -27,6 +32,7 @@ import { Badge } from "./ui/badge";
       name="Killian"
       company="Teasquare"
       job="Fondateur"
+      image={Teasquare.src}
     />
     <TestimonialCard
       description=`Excellente prestation de Charles.
@@ -35,12 +41,14 @@ import { Badge } from "./ui/badge";
       name="Ludovic"
       company="Figue.io"
       job="Chef de projet"
+      image={Figue.src}
     />
     <TestimonialCard
       description=`Nous avons eu le plaisir de collaborer avec Charles sur un projet de développement impliquant une stack technique variée. Volontaire, disponible et efficace, il a su s'adapter aux besoins de l'équipe et contribuer activement à l'avancement du projet. Son sérieux et sa capacité d'intégration ont été appréciés.`
       name="Benjamin"
       company="Mentorshow"
       job="COO"
+      image={Mentorshow.src}
     />
   </div>
 </div>
