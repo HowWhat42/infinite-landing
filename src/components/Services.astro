@@ -1,20 +1,53 @@
 ---
 import Vector from '../assets/service-vector.png';
 import ImageVector from '../assets/image-vector.png';
+import Frontend from '../assets/frontend.png';
+import Backend from '../assets/backend.png';
+import SEO from '../assets/seo.png';
+import Linear from '../assets/linear.png';
+import OnDemand from '../assets/on-demand.png';
+import Hetzner from '../assets/hetzner.png';
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 ---
 
 <script>
-  let selectedCard: any = null;
+  let selectedCard1: any = null;
+  let selectedCard2: any = null;
+
+  function updateServiceImages(index: number, group: number) {
+    const images = group === 1 ? [
+      document.querySelector('img[alt="frontend"]'),
+      document.querySelector('img[alt="backend"]'),
+      document.querySelector('img[alt="seo"]')
+    ] : [
+      document.querySelector('img[alt="linear"]'),
+      document.querySelector('img[alt="on-demand"]'),
+      document.querySelector('img[alt="hetzner"]')
+    ];
+    
+    images.forEach((img, i) => {
+      if (img) {
+        img.style.opacity = i === index ? '1' : '0';
+        img.style.transition = 'opacity 0.3s';
+      }
+    });
+  }
 
   function handleCardClick(index: number, selector: string) {
     const cards = document.querySelectorAll(selector);
+    const group = selector === '.service-card-1' ? 1 : 2;
     cards.forEach((card, i) => {
       if (i === index) {
         card.classList.toggle('selected');
         card.classList.toggle('stroke-service-card');
-        selectedCard = selectedCard === index ? null : index;
+        if (group === 1) {
+          selectedCard1 = selectedCard1 === index ? null : index;
+          updateServiceImages(selectedCard1 === null ? 0 : index, 1);
+        } else {
+          selectedCard2 = selectedCard2 === index ? null : index;
+          updateServiceImages(selectedCard2 === null ? 0 : index, 2);
+        }
       } else {
         card.classList.remove('selected');
         card.classList.remove('stroke-service-card');
@@ -30,6 +63,8 @@ import { Button } from "./ui/button";
     cards1[0].classList.add('stroke-service-card');
     cards2[0].classList.add('selected');
     cards2[0].classList.add('stroke-service-card');
+    updateServiceImages(0, 1);
+    updateServiceImages(0, 2);
 
     cards1.forEach((card, index) => {
       card.addEventListener('click', () => handleCardClick(index, '.service-card-1'));
@@ -47,9 +82,11 @@ import { Button } from "./ui/button";
     <Button variant="secondary">Discutons de votre projet</Button>
   </div>
   <div class="text-white flex gap-20 items-center">
-      <div class="w-[616px] h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl">
+      <div class="w-[616px] h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl overflow-hidden">
         <img src={ImageVector.src} alt="vector" class="rounded-2xl" />
-        <img src="/assets/illustration.png" alt="test" />
+        <img src={Frontend.src} alt="frontend" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 1" />
+        <img src={Backend.src} alt="backend" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={SEO.src} alt="seo" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
       </div>
       <div class="max-w-[616px] flex flex-col gap-4">
         <div class="service-card-1 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
@@ -87,9 +124,11 @@ import { Button } from "./ui/button";
           <p class="text-white/70 font-medium">Nous gérons serveurs, domaines, e-mails et sécurité. Vous n'avez rien à gérer : votre projet est entre de bonnes mains.</p>
         </div>
       </div>
-      <div class="w-[616px] h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl">
+      <div class="w-[616px] h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl overflow-hidden">
         <img src={ImageVector.src} alt="vector" class="rounded-2xl" />
-        <img src="/assets/illustration.png" alt="test" />
+        <img src={Linear.src} alt="linear" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={OnDemand.src} alt="on-demand" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={Hetzner.src} alt="hetzner" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
       </div>
     </div>
 </div>
