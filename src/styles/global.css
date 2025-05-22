@@ -252,6 +252,33 @@
   z-index: 1;
 }
 
+.bg-service-image {
+  background: radial-gradient(at 0 0, rgba(255, 255, 255, 0.4), #ffffff00);
+  backdrop-filter: blur(15px);
+}
+
+.stroke-service-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(at 0 0, rgba(255, 255, 255, 0.4), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  z-index: 1;
+}
+
+.stroke-service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding-left: 1px;
+  background: radial-gradient(at 0 50%, rgba(255, 255, 255, 0.4), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  z-index: 1;
+}
+
 .bg-stat-card {
   box-shadow: -40px 0 67px -22px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(160px);
