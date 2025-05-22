@@ -1,0 +1,14 @@
+---
+import { ChevronDown } from "lucide-react";
+const { title } = Astro.props;
+---
+
+<details class="relative group bg-neutral-700/10 bg-question stroke-question rounded-2xl overflow-hidden">
+  <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
+    {title}
+    <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
+  </summary>
+  <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
+    <slot />
+  </div>
+</details>

@@ -1,5 +1,5 @@
 ---
-import { ChevronDown } from "lucide-react";
+import Question from "./Question.astro";
 import { Badge } from "./ui/badge";
 ---
 
@@ -10,49 +10,25 @@ import { Badge } from "./ui/badge";
     <p class="text-lg text-white/70 font-normal">Vous vous demandez encore si Infinite Lab est fait pour vous ?</p>
   </div>
   <div class="w-full max-w-3xl space-y-4">
-    <details class="group bg-neutral-900/50 rounded-xl overflow-hidden border border-white/10">
-      <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
-        Fournissez-vous un accompagnement après la mise en ligne
-        <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
-      </summary>
-      <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
-        <p>Nous proposons des packs de maintenance pour :</p>
-        <ul class="list-disc list-inside mt-2 space-y-1">
-          <li>Mise à jour et évolutions du site</li>
-          <li>Support et assistance technique</li>
-          <li>Optimisation SEO et performance</li>
-        </ul>
-      </div>
-    </details>
-    <details class="group bg-neutral-900/50 rounded-xl overflow-hidden border border-white/10">
-      <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
-        Quels sont vos délais de réalisation ?
-        <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
-      </summary>
-      <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
-        <p>Les délais varient selon la complexité du projet. En général :</p>
-        <ul class="list-disc list-inside mt-2 space-y-1">
-          <li>Site vitrine : 2-4 semaines</li>
-          <li>Application web : 4-8 semaines</li>
-          <li>E-commerce : 6-12 semaines</li>
-        </ul>
-      </div>
-    </details>
-    <details class="group bg-neutral-900/50 rounded-xl overflow-hidden border border-white/10">
-      <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-medium text-white hover:text-white/90 transition-colors">
-        Comment se déroule un projet avec Infinite Lab ?
-        <ChevronDown className="w-6 h-6 transform transition-transform duration-300 ease-in-out group-open:rotate-180" />
-      </summary>
-      <div class="p-6 pt-0 text-white/70 transition-all duration-300 ease-in-out">
-        <ol class="list-decimal list-inside mt-2 space-y-1">
-          <li>Consultation initiale gratuite</li>
-          <li>Analyse des besoins et proposition détaillée</li>
-          <li>Validation du design et des fonctionnalités</li>
-          <li>Développement avec points réguliers</li>
-          <li>Tests et optimisations</li>
-          <li>Mise en production et formation</li>
-        </ol>
-      </div>
-    </details>
+    <Question title="Quelles informations dois-je fournir pour obtenir un devis ?">
+      <p>Une description de votre projet, vos objectifs, vos délais et, si possible, un budget indicatif. Pas d'inquiétude si tout n'est pas clair : nous vous accompagnons pour cadrer vos besoins.</p>
+    </Question>
+    <Question title="Combien de temps prend un projet ?">
+      <p>Cela dépend de la complexité du projet. Un site vitrine simple peut être livré en quelques semaines, tandis qu'un projet sur-mesure plus technique demandera plusieurs mois.</p>
+      <p>Voici quelques estimations moyennes :</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Site vitrine : 2-4 semaines</li>
+        <li>Application web : 4-8 semaines</li>
+      </ul>
+    </Question>
+    <Question title="Est-il possible de demander des modifications en cours de projet ?">
+      <p>Oui, nous prévoyons toujours une certaine flexibilité. Selon l'avancement, certaines modifications peuvent être intégrées sans impact, d'autres nécessiteront un ajustement du planning ou du devis.</p>
+    </Question>
+    <Question title="Puis-je être remboursé si j'annule le projet ?">
+      <p>L'annulation est possible à tout moment. Selon l'état d'avancement, un remboursement partiel pourra être envisagé, correspondant aux étapes non encore réalisées.</p>
+    </Question>
+    <Question title="Et après la mise en ligne ?">
+      <p>Nous restons à vos côtés. Maintenance, évolutions, support technique ou hébergement : vous pouvez compter sur nous pour assurer la continuité et la performance de votre site dans le temps.</p>
+    </Question>
   </div>
 </div>
