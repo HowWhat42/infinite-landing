@@ -328,7 +328,7 @@
   z-index: 1;
 }
 
-.bg-question {
+.blur-question {
   backdrop-filter: blur(34px);
 }
 

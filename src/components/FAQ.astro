@@ -1,6 +1,29 @@
 ---
-import Question from "./Question.astro";
+import { Accordion } from "./Accordion";
 import { Badge } from "./ui/badge";
+
+const data = [
+  {
+    title: "Quelles informations dois-je fournir pour obtenir un devis?",
+    description: "Une description de votre projet, vos objectifs, vos délais et, si possible, un budget indicatif. Pas d'inquiétude si tout n'est pas clair : nous vous accompagnons pour cadrer vos besoins.",
+  },
+  {
+    title: "Combien de temps prend un projet?",
+    description: "Cela dépend de la complexité du projet. Un site vitrine simple peut être livré en quelques semaines, tandis qu'un projet plus technique demandera plusieurs mois.",
+  },
+  {
+    title: "Est-il possible de demander des modifications en cours de projet?",
+    description: "Oui, nous prévoyons toujours une certaine flexibilité. Selon l'avancement, certaines modifications peuvent être intégrées sans impact, d'autres nécessiteront un ajustement du planning ou du devis.",
+  },
+  {
+    title: "Puis-je être remboursé si j'annule le projet?",
+    description: "L'annulation est possible à tout moment. Selon l'état d'avancement, un remboursement partiel pourra être envisagé, correspondant aux étapes non encore réalisées.",
+  },
+  {
+    title: "Et après la mise en ligne?",
+    description: "Nous restons à vos côtés. Maintenance, évolutions, support technique ou hébergement : vous pouvez compter sur nous pour assurer la continuité et la performance de votre site dans le temps.",
+  }
+]
 ---
 
 <div class="bg-neutral-950 py-32 px-16 flex flex-col justify-center items-center gap-20 rounded-b-[40px]">
@@ -9,26 +32,8 @@ import { Badge } from "./ui/badge";
     <h1 class="text-center font-display text-5xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Questions fréquentes</h1>
     <p class="text-lg text-white/70 font-normal">Vous vous demandez encore si Infinite Lab est fait pour vous ?</p>
   </div>
+  
   <div class="w-full max-w-3xl space-y-4">
-    <Question title="Quelles informations dois-je fournir pour obtenir un devis ?">
-      <p>Une description de votre projet, vos objectifs, vos délais et, si possible, un budget indicatif. Pas d'inquiétude si tout n'est pas clair : nous vous accompagnons pour cadrer vos besoins.</p>
-    </Question>
-    <Question title="Combien de temps prend un projet ?">
-      <p>Cela dépend de la complexité du projet. Un site vitrine simple peut être livré en quelques semaines, tandis qu'un projet sur-mesure plus technique demandera plusieurs mois.</p>
-      <p>Voici quelques estimations moyennes :</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
-        <li>Site vitrine : 2-4 semaines</li>
-        <li>Application web : 4-8 semaines</li>
-      </ul>
-    </Question>
-    <Question title="Est-il possible de demander des modifications en cours de projet ?">
-      <p>Oui, nous prévoyons toujours une certaine flexibilité. Selon l'avancement, certaines modifications peuvent être intégrées sans impact, d'autres nécessiteront un ajustement du planning ou du devis.</p>
-    </Question>
-    <Question title="Puis-je être remboursé si j'annule le projet ?">
-      <p>L'annulation est possible à tout moment. Selon l'état d'avancement, un remboursement partiel pourra être envisagé, correspondant aux étapes non encore réalisées.</p>
-    </Question>
-    <Question title="Et après la mise en ligne ?">
-      <p>Nous restons à vos côtés. Maintenance, évolutions, support technique ou hébergement : vous pouvez compter sur nous pour assurer la continuité et la performance de votre site dans le temps.</p>
-    </Question>
+    <Accordion data={data} client:idle />
   </div>
 </div>
