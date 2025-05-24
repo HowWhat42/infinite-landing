@@ -75,60 +75,60 @@ import { Button } from "./ui/button";
   });
 </script>
 
-<div class="bg-neutral-950 py-32 px-16 flex flex-col justify-center items-center gap-20">
-  <div class="flex flex-col gap-4 justify-center items-center max-w-3xl">
+<div class="bg-neutral-950 py-16 md:py-32 px-4 md:px-16 flex flex-col justify-center items-center gap-10 md:gap-20">
+  <div class="flex flex-col gap-4 justify-center items-center max-w-3xl px-4">
     <Badge>Nos expertises aux service de votre projet</Badge>
-    <h2 class="text-center font-display text-5xl pb-4 font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Un socle technique solide, pour un projet sans friction</h2>
+    <h2 class="text-center font-display text-3xl md:text-5xl pb-4 font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Un socle technique solide, pour un projet sans friction</h2>
     <Button variant="secondary">Discutons de votre projet</Button>
   </div>
-  <div class="text-white flex gap-20 items-center">
-      <div class="w-[616px] h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl overflow-hidden">
+  <div class="text-white flex flex-col lg:flex-row gap-10 md:gap-20 items-center">
+      <div class="w-full lg:w-[616px] h-[300px] md:h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl overflow-hidden">
         <img src={ImageVector.src} alt="vector" class="rounded-2xl" />
-        <img src={Frontend.src} alt="frontend" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 1" />
-        <img src={Backend.src} alt="backend" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
-        <img src={SEO.src} alt="seo" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={Frontend.src} alt="frontend" class="absolute w-full lg:w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 1" />
+        <img src={Backend.src} alt="backend" class="absolute w-full lg:w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={SEO.src} alt="seo" class="absolute w-full lg:w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
       </div>
-      <div class="max-w-[616px] flex flex-col gap-4">
-        <div class="service-card-1 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+      <div class="w-full lg:max-w-[616px] flex flex-col gap-4">
+        <div class="service-card-1 p-6 md:p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
           <img src={Vector.src} alt="vector" class="absolute top-0 left-0 rounded-2xl opacity-0 transition-opacity duration-300 [.selected_&]:opacity-100" />
-          <h3 class="font-display font-medium text-xl">Frontend - Votre interface sur-mesure</h3>
-          <p class="text-white/70 font-medium">Sites vitrines, blogs, dashboards ou e-commerce : nous concevons une interface fluide, responsive et élégante, adaptée à tous les appareils.</p>
+          <h3 class="font-display font-medium text-lg md:text-xl">Frontend - Votre interface sur-mesure</h3>
+          <p class="text-white/70 font-medium text-sm md:text-base">Sites vitrines, blogs, dashboards ou e-commerce : nous concevons une interface fluide, responsive et élégante, adaptée à tous les appareils.</p>
         </div>
-        <div class="service-card-1 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="service-card-1 p-6 md:p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
           <img src={Vector.src} alt="vector" class="absolute top-0 left-0 rounded-2xl opacity-0 transition-opacity duration-300 [.selected_&]:opacity-100" />
-          <h3 class="font-display font-medium text-xl">Backend - Des fondations techniques performantes</h3>
-          <p class="text-white/70 font-medium">Bases de données, logique métier, APIs… Tout est pensé pour garantir fluidité, scalabilité et robustesse. Vos utilisateurs ne verront pas ce qui se passe en coulisses, mais ils sentiront la différence.</p>
+          <h3 class="font-display font-medium text-lg md:text-xl">Backend - Des fondations techniques performantes</h3>
+          <p class="text-white/70 font-medium text-sm md:text-base">Bases de données, logique métier, APIs… Tout est pensé pour garantir fluidité, scalabilité et robustesse. Vos utilisateurs ne verront pas ce qui se passe en coulisses, mais ils sentiront la différence.</p>
         </div>
-        <div class="service-card-1 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="service-card-1 p-6 md:p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
           <img src={Vector.src} alt="vector" class="absolute top-0 left-0 rounded-2xl opacity-0 transition-opacity duration-300 [.selected_&]:opacity-100" />
-          <h3 class="font-display font-medium text-xl">Référencement - Soyez visible dès le lancement</h3>
-          <p class="text-white/70 font-medium">Nous optimisons votre site pour le SEO et vous accompagnons sur vos campagnes SEA. Votre projet mérite d'être vu - et trouvé.</p>
+          <h3 class="font-display font-medium text-lg md:text-xl">Référencement - Soyez visible dès le lancement</h3>
+          <p class="text-white/70 font-medium text-sm md:text-base">Nous optimisons votre site pour le SEO et vous accompagnons sur vos campagnes SEA. Votre projet mérite d'être vu - et trouvé.</p>
         </div>
       </div>
     </div>
-    <div class="text-white flex gap-20 items-center">
-      <div class="max-w-[616px] flex flex-col gap-4">
-        <div class="service-card-2 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+    <div class="text-white flex flex-col-reverse lg:flex-row gap-10 md:gap-20 items-center">
+      <div class="w-full lg:max-w-[616px] flex flex-col gap-4">
+        <div class="service-card-2 p-6 md:p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
           <img src={Vector.src} alt="vector" class="absolute top-0 left-0 rounded-2xl opacity-0 transition-opacity duration-300 [.selected_&]:opacity-100" />
-          <h3 class="font-display font-medium text-xl">Gestion de projet - Du cadrage au déploiement</h3>
-          <p class="text-white/70 font-medium">Nous pilotons votre projet avec méthode, du cadrage initial jusqu'à la mise en ligne, pour un résultat fluide et sans surprise.</p>
+          <h3 class="font-display font-medium text-lg md:text-xl">Gestion de projet - Du cadrage au déploiement</h3>
+          <p class="text-white/70 font-medium text-sm md:text-base">Nous pilotons votre projet avec méthode, du cadrage initial jusqu'à la mise en ligne, pour un résultat fluide et sans surprise.</p>
         </div>
-        <div class="service-card-2 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="service-card-2 p-6 md:p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
           <img src={Vector.src} alt="vector" class="absolute top-0 left-0 rounded-2xl opacity-0 transition-opacity duration-300 [.selected_&]:opacity-100" />
-          <h3 class="font-display font-medium text-xl">Sur-mesure - Chaque solution est pensée pour vous</h3>
-          <p class="text-white/70 font-medium">Pas de solution générique. Chaque projet est une réponse précise à votre besoin, votre audience et vos contraintes.</p>
+          <h3 class="font-display font-medium text-lg md:text-xl">Sur-mesure - Chaque solution est pensée pour vous</h3>
+          <p class="text-white/70 font-medium text-sm md:text-base">Pas de solution générique. Chaque projet est une réponse précise à votre besoin, votre audience et vos contraintes.</p>
         </div>
-        <div class="service-card-2 p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="service-card-2 p-6 md:p-8 flex flex-col gap-4 relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
           <img src={Vector.src} alt="vector" class="absolute top-0 left-0 rounded-2xl opacity-0 transition-opacity duration-300 [.selected_&]:opacity-100" />
-          <h3 class="font-display font-medium text-xl">Hébergement - Un service qui tient dans le temps</h3>
-          <p class="text-white/70 font-medium">Nous gérons serveurs, domaines, e-mails et sécurité. Vous n'avez rien à gérer : votre projet est entre de bonnes mains.</p>
+          <h3 class="font-display font-medium text-lg md:text-xl">Hébergement - Un service qui tient dans le temps</h3>
+          <p class="text-white/70 font-medium text-sm md:text-base">Nous gérons serveurs, domaines, e-mails et sécurité. Vous n'avez rien à gérer : votre projet est entre de bonnes mains.</p>
         </div>
       </div>
-      <div class="w-[616px] h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl overflow-hidden">
+      <div class="w-full lg:w-[616px] h-[300px] md:h-[550px] bg-neutral-800/10 relative stroke-service-image rounded-2xl overflow-hidden">
         <img src={ImageVector.src} alt="vector" class="rounded-2xl" />
-        <img src={Linear.src} alt="linear" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
-        <img src={OnDemand.src} alt="on-demand" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
-        <img src={Hetzner.src} alt="hetzner" class="absolute w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={Linear.src} alt="linear" class="absolute w-full lg:w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={OnDemand.src} alt="on-demand" class="absolute w-full lg:w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
+        <img src={Hetzner.src} alt="hetzner" class="absolute w-full lg:w-[900px] rounded-3xl border border-white/20 -bottom-8 -right-16 transition-opacity duration-300" style="opacity: 0" />
       </div>
     </div>
 </div>

@@ -9,26 +9,26 @@ import { Button } from "./ui/button";
   <img class="fixed top-0 left-0 w-full h-screen -z-10" src={hero.src} alt="background-hero" fetchpriority="high" />
   <div class="bg-hero fixed bottom-0 right-0 w-full h-screen -z-10" />
   <div class="h-full flex flex-col justify-center">
-    <div class="px-32 my-52 flex justify-between items-center">
-      <div class="flex flex-col justify-center gap-8">
-        <div class="max-w-[690px] flex flex-col gap-6">
+    <div class="px-4 md:px-16 lg:px-32 my-20 md:my-32 lg:my-52 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0">
+      <div class="flex flex-col justify-center items-center lg:items-start gap-6 md:gap-8 w-full lg:w-auto">
+        <div class="w-full max-w-[690px] flex flex-col items-center lg:items-start gap-4 md:gap-6">
           <Badge>Déjà +10 projets menés avec succès</Badge>
-          <div class="relative">
-            <h1 class="absolute font-display shadow-title text-6xl font-medium text-transparent z-[-1]">Transformez vos idées en succès digital</h1>
-            <h1 class="font-display text-6xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Transformez vos idées en succès digital</h1>
+          <div class="relative text-center lg:text-left w-full">
+            <h1 class="absolute font-display shadow-title text-3xl md:text-5xl lg:text-6xl font-medium text-transparent z-[-1]">Transformez vos idées en succès digital</h1>
+            <h1 class="font-display text-3xl md:text-5xl lg:text-6xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Transformez vos idées en succès digital</h1>
           </div>
           
-          <p class="text-lg text-white/70 font-medium">Chez Infinite Lab, nous nous engageons à mener chaque projet avec passion et précision. De la conception à l'hébergement, nous faisons de vos visions une réalité numérique.</p>
+          <p class="text-base md:text-lg text-white/70 font-medium text-center lg:text-left">Chez Infinite Lab, nous nous engageons à mener chaque projet avec passion et précision. De la conception à l'hébergement, nous faisons de vos visions une réalité numérique.</p>
         </div>
-        <div class="flex gap-4">
-          <div class="relative">
+        <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+          <div class="relative w-full flex justify-center md:w-auto">
             <div class="absolute z-[-1] -top-4 -left-2 bg-radial from-[#9A7CFF] from-[37%] to-[#0E0AA200] w-[324px] h-[70px] blur-2xl" />
-            <Button size="lg">Recevoir un devis personnalisé</Button>
+            <Button size="lg" className="md:w-auto">Recevoir un devis personnalisé</Button>
           </div>
-          <Button variant="secondary" size="lg">Contactez-nous</Button>
+          <Button variant="secondary" size="lg" className="md:w-auto">Contactez-nous</Button>
         </div>
       </div>
-      <img class="h-full -mb-40" src={logoGlassy.src} alt="logo" fetchpriority="high" />
+      <img class="hidden h-[300px] md:h-[400px] lg:h-full lg:-mb-40" src={logoGlassy.src} alt="logo" fetchpriority="high" />
     </div>
   </div>
 </div>

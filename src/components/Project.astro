@@ -4,25 +4,28 @@ import { ChevronRightIcon } from "lucide-react";
 const { title, description, stack, link, image } = Astro.props;
 ---
 
-<div class="sticky top-16 flex items-center gap-20 py-12">
-  <div class="w-[620px] bg-neutral-950 text-white flex flex-col gap-8">
-    <div class="flex flex-col gap-4 py-8 relative">
-      <div class="absolute z-[-1] h-[200px] w-full top-[-200px]  bg-gradient-to-b  from-neutral-950/40 to-neutral-950/80" />
+<div class="sticky bg-neutral-950 md:bg-transparent top-16 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-20 py-8 lg:py-12">
+  <div class="w-full lg:w-[620px] bg-neutral-950 text-white flex flex-col gap-6 lg:gap-8">
+    <div class="flex flex-col gap-4 py-6 lg:py-8 relative">
+      <div class="hidden md:block absolute z-[-1] h-[200px] w-full top-[-200px] bg-gradient-to-b from-neutral-950/40 to-neutral-950/80" />
       <div class="flex flex-col gap-2">
-        <h3 class="font-display text-4xl font-medium">{title}</h3>
-        <p class="">{description}</p>
+        <h3 class="font-display text-2xl lg:text-4xl font-medium">{title}</h3>
+        <p class="text-sm lg:text-base">{description}</p>
       </div>
-      <div class="flex gap-2">
+      <div class="flex flex-wrap gap-2">
         {stack.map((tech: string) => (
-          <span class="relative rounded-lg px-2.5 py-1 stroke-tech-card">{tech}</span>
+          <span class="relative rounded-lg px-2 py-1 text-sm lg:text-base stroke-tech-card">{tech}</span>
         ))}
       </div>
     </div>
-    <button class="cursor-pointer text-white underline-offset-4 hover:underline flex items-center gap-2"><p class="font-medium">Découvrir le projet</p><ChevronRightIcon size={24} /></button>
+    <button class="cursor-pointer text-white underline-offset-4 hover:underline flex items-center gap-2">
+      <p class="font-medium text-sm lg:text-base">Découvrir le projet</p>
+      <ChevronRightIcon size={20} className="lg:w-6 lg:h-6" />
+    </button>
   </div>
-  <div class="relative bg-neutral-950 rounded-2xl">
-    <div class="absolute z-[-1] h-[80px] w-[120%] left-[-10%] top-[-30px]  bg-gradient-to-b  from-neutral-950/40 to-neutral-950/80 blur-md" />
-    <div class="w-[616px] h-[500px] relative flex items-center justify-center stroke-project-card rounded-2xl bg-gradient-to-t from-[#a95dd81e] to-[83%] to-[#36435E00]">
+  <div class="relative bg-neutral-950 rounded-2xl w-full lg:w-auto">
+    <div class="hidden md:block absolute z-[-1] h-[80px] w-[120%] left-[-10%] top-[-30px] bg-gradient-to-b from-neutral-950/40 to-neutral-950/80 blur-md" />
+    <div class="w-full lg:w-[616px] h-[300px] md:h-[400px] lg:h-[500px] relative flex items-center justify-center stroke-project-card rounded-2xl bg-gradient-to-t from-[#a95dd81e] to-[83%] to-[#36435E00]">
       <img src={image.src} alt={title} />
     </div>
   </div>
