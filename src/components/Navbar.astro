@@ -7,11 +7,11 @@ import { MenuIcon, XIcon } from "lucide-react";
 <div id="mainNav" class="w-fit sticky top-8 z-30 flex items-center justify-between bg-navbar stroke-navbar p-1.5 pl-4 gap-4 md:gap-14 mt-4 mx-auto rounded-2xl transition-transform duration-300">
   <img class="h-5 md:h-6" src={logo.src} alt="logo-navbar" fetchpriority="high" />
   <div class="hidden md:flex items-center gap-2">
-    <Button variant="link">Expertises</Button>
-    <Button variant="link">Réalisations</Button>
-    <Button variant="link">À propos</Button>
-    <Button variant="link">FAQ</Button>
-    <Button variant="link">Contact</Button>
+    <Button variant="link" data-section="services">Expertises</Button>
+    <Button variant="link" data-section="projects">Réalisations</Button>
+    <Button variant="link" data-section="me">À propos</Button>
+    <Button variant="link" data-section="faq">FAQ</Button>
+    <Button variant="link" data-section="contact">Contact</Button>
   </div>
   <div class="flex items-center gap-4">
     <Button size="lg" className="hidden md:block">Je lance mon projet</Button>
@@ -29,12 +29,12 @@ import { MenuIcon, XIcon } from "lucide-react";
       <XIcon className="w-6 h-6 text-white" />
     </button>
   </div>
-  <Button variant="link" className="text-xl">Expertises</Button>
-  <Button variant="link" className="text-xl">Réalisations</Button>
-  <Button variant="link" className="text-xl">À propos</Button>
-  <Button variant="link" className="text-xl">FAQ</Button>
-  <Button variant="link" className="text-xl">Contact</Button>
-  <Button size="lg" className="mt-4">Je lance mon projet</Button>
+  <Button variant="link" className="text-xl" data-section="services">Expertises</Button>
+  <Button variant="link" className="text-xl" data-section="projects">Réalisations</Button>
+  <Button variant="link" className="text-xl" data-section="me">À propos</Button>
+  <Button variant="link" className="text-xl" data-section="faq">FAQ</Button>
+  <Button variant="link" className="text-xl" data-section="contact">Contact</Button>
+  <Button size="lg" className="mt-4" data-section="contact">Je lance mon projet</Button>
 </div>
 
 <script>
@@ -45,13 +45,32 @@ import { MenuIcon, XIcon } from "lucide-react";
 
   menuButton?.addEventListener('click', () => {
     mobileMenu?.classList.remove('translate-x-full');
-    mainNav?.classList.add('hidden');
+    mainNav?.classList.add('-translate-y-full');
     document.body.style.overflow = 'hidden';
   });
 
   closeButton?.addEventListener('click', () => {
     mobileMenu?.classList.add('translate-x-full');
-    mainNav?.classList.remove('hidden');
+    mainNav?.classList.remove('-translate-y-full');
     document.body.style.overflow = '';
+  });
+
+  // Smooth scroll navigation
+  document.querySelectorAll('[data-section]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const section = button.getAttribute('data-section');
+      const element = document.getElementById(section as string);
+      if (element) {
+        // Close mobile menu if open
+        if (!mobileMenu?.classList.contains('translate-x-full')) {
+          mobileMenu?.classList.add('translate-x-full');
+          mainNav?.classList.remove('-translate-y-full');
+          document.body.style.overflow = '';
+        }
+        // Smooth scroll to section
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   });
 </script>
