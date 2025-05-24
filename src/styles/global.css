@@ -343,3 +343,14 @@
   mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
   z-index: -1;
 }
+
+.border-input-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  background: 
+    radial-gradient(at 50% 25%, rgba(255, 255, 255, 0.4), #ffffff00);
+  border-radius: inherit;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+}
