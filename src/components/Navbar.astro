@@ -45,13 +45,13 @@ import { MenuIcon, XIcon } from "lucide-react";
 
   menuButton?.addEventListener('click', () => {
     mobileMenu?.classList.remove('translate-x-full');
-    mainNav?.classList.add('-translate-y-full');
+    mainNav?.classList.add('-translate-y-[200%]');
     document.body.style.overflow = 'hidden';
   });
 
   closeButton?.addEventListener('click', () => {
     mobileMenu?.classList.add('translate-x-full');
-    mainNav?.classList.remove('-translate-y-full');
+    mainNav?.classList.remove('-translate-y-[200%]');
     document.body.style.overflow = '';
   });
 
