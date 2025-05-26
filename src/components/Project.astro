@@ -19,7 +19,7 @@ const { title, description, stack, link, image } = Astro.props;
       </div>
     </div>
     <button class="cursor-pointer text-white underline-offset-4 hover:underline flex items-center gap-2">
-      <p class="font-medium text-sm lg:text-base">Découvrir le projet</p>
+      <a href={link} target="_blank" class="font-medium text-sm lg:text-base">Découvrir le projet</a>
       <ChevronRightIcon size={20} className="lg:w-6 lg:h-6" />
     </button>
   </div>
