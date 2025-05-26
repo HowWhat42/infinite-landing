@@ -65,7 +65,7 @@ import { MenuIcon, XIcon } from "lucide-react";
         // Close mobile menu if open
         if (!mobileMenu?.classList.contains('translate-x-full')) {
           mobileMenu?.classList.add('translate-x-full');
-          mainNav?.classList.remove('-translate-y-full');
+          mainNav?.classList.remove('-translate-y-[200%]');
           document.body.style.overflow = '';
         }
         // Smooth scroll to section
