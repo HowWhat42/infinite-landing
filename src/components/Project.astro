@@ -1,7 +1,7 @@
 ---
 import { ChevronRightIcon } from "lucide-react";
 
-const { title, description, stack, link, image } = Astro.props;
+const { title, description, stack, link, image, fullWidth } = Astro.props;
 ---
 
 <div class="sticky bg-neutral-950 md:bg-transparent top-16 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-20 py-8 lg:py-12">
@@ -26,7 +26,7 @@ const { title, description, stack, link, image } = Astro.props;
   <div class="relative bg-neutral-950 rounded-2xl w-full lg:w-auto">
     <div class="hidden md:block absolute z-[-1] h-[80px] w-[120%] left-[-10%] top-[-30px] bg-gradient-to-b from-neutral-950/40 to-neutral-950/80 blur-md" />
     <div class="w-full lg:w-[616px] h-[300px] md:h-[400px] lg:h-[500px] relative flex items-center justify-center stroke-project-card rounded-2xl bg-gradient-to-t from-[#a95dd81e] to-[83%] to-[#36435E00]">
-      <img src={image.src} alt={title} />
+      <img class={` object-cover rounded-2xl ${fullWidth ? "w-full h-full" : ""}`} src={image.src} alt={title} />
     </div>
   </div>
 </div>
