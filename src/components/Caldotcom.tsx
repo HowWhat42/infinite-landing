@@ -4,7 +4,7 @@ export default function Caldotcom() {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({"namespace":"30min"});
-      cal("ui", {"cssVarsPerTheme":{"light":{}, "dark":{"cal-brand":"#AE5DC7"}}, "hideEventTypeDetails":false,"layout":"month_view"});
+      cal("ui", {"theme":"dark", "cssVarsPerTheme":{"light":{}, "dark":{"cal-brand":"#AE5DC7"}}, "hideEventTypeDetails":false,"layout":"month_view"});
     })();
   }, [])
   return <Cal namespace="30min"
