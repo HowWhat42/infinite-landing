@@ -1,9 +1,6 @@
 ---
-import Airrental from "../assets/air-rental.png";
-import Mentorshow from "../assets/mentorshow-lp.png";
-import Reveal from "../assets/reveal.png";
-import Tatoo from "../assets/tatoo-formation.png";
 import Project from "./Project.astro";
+import { featuredProjects } from "../lib/projects";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 ---
@@ -15,36 +12,18 @@ import { Button } from "./ui/button";
     <p class="text-base md:text-lg text-white/70 font-normal text-center px-4">Des projets concrets, sur mesure, avec des résultats à la clé :</p>
   </div>
   <div class="pb-4 w-full md:w-auto">
-    <Project
-      title="Tatoo Formation"
-      description="Plateforme de formation certifiante Qualiopi"
-      stack={["React", "Tanstack", "AdonisJS", "TailwindCSS", "Linear"]}
-      image={Tatoo}
-      link="https://tatoo-formation.xyz/"
-    />
-    <Project
-      title="Mentorshow"
-      description="Plateforme de masterclass en ligne animées par des experts pour apprendre à son rythme, leader du secteur en France"
-      stack={["React Native", "Next.JS", "AdonisJS", "Linear"]}
-      image={Mentorshow}
-      fullWidth={true}
-      link="https://mentorshow.com/"
-    />
-    <Project
-      title="Reveal"
-      description="Plateforme de monétisation permettant aux créateurs de vendre du contenu exclusif à leur communauté, architecture DDD, collaboration avec Figue.io"
-      stack={["Next.JS", "NestJS", "TailwindCSS", "Linear"]}
-      image={Reveal}
-      fullWidth={true}
-      link="https://reveal.me/"
-    />
-    <Project
-      title="Dashboard Keeper"
-      description="Gestion des réservations, statistiques, utilisateurs pour Air Rental, app mobile de gestion pour Keepers"
-      stack={["React Native", "React", "InertiaJS", "AdonisJS", "TailwindCSS", "Linear"]}
-      image={Airrental}
-      link="https://air-rental.fr/"
-    />
+    {featuredProjects.map((project) => (
+      <Project
+        title={project.title}
+        description={project.description}
+        stack={project.stack}
+        image={project.image}
+        link={project.link}
+        variant={project.variant}
+      />
+    ))}
   </div>
-  <!-- <Button variant="secondary" className="w-full md:w-auto">Découvrir les autres projets</Button> -->
+  <a href="/projets" class="w-full md:w-auto">
+    <Button variant="secondary" className="w-full md:w-auto">Découvrir tous les projets</Button>
+  </a>
 </div>

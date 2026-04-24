@@ -18,13 +18,13 @@ import { Button } from "./ui/button";
 
   function updateServiceImages(index: number, group: number) {
     const images = group === 1 ? [
-      document.querySelector('img[alt="frontend"]'),
-      document.querySelector('img[alt="backend"]'),
-      document.querySelector('img[alt="seo"]')
+      document.querySelector<HTMLImageElement>('img[alt="frontend"]'),
+      document.querySelector<HTMLImageElement>('img[alt="backend"]'),
+      document.querySelector<HTMLImageElement>('img[alt="seo"]')
     ] : [
-      document.querySelector('img[alt="linear"]'),
-      document.querySelector('img[alt="on-demand"]'),
-      document.querySelector('img[alt="hetzner"]')
+      document.querySelector<HTMLImageElement>('img[alt="linear"]'),
+      document.querySelector<HTMLImageElement>('img[alt="on-demand"]'),
+      document.querySelector<HTMLImageElement>('img[alt="hetzner"]')
     ];
     
     images.forEach((img, i) => {

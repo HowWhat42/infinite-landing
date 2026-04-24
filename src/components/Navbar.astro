@@ -60,16 +60,20 @@ import { MenuIcon, XIcon } from "lucide-react";
     button.addEventListener('click', (e) => {
       e.preventDefault();
       const section = button.getAttribute('data-section');
-      const element = document.getElementById(section as string);
+      if (!section) return;
+      const element = document.getElementById(section);
+      // Close mobile menu if open
+      if (!mobileMenu?.classList.contains('translate-x-full')) {
+        mobileMenu?.classList.add('translate-x-full');
+        mainNav?.classList.remove('-translate-y-[200%]');
+        document.body.style.overflow = '';
+      }
       if (element) {
-        // Close mobile menu if open
-        if (!mobileMenu?.classList.contains('translate-x-full')) {
-          mobileMenu?.classList.add('translate-x-full');
-          mainNav?.classList.remove('-translate-y-[200%]');
-          document.body.style.overflow = '';
-        }
-        // Smooth scroll to section
+        // Smooth scroll to section on the current page
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Section not on this page: navigate to landing anchor
+        window.location.href = `/#${section}`;
       }
     });
   });

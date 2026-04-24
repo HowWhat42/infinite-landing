@@ -3,8 +3,57 @@ import AirRental from "../assets/air-rental.png";
 import Figue from "../assets/figue.png";
 import Mentorshow from "../assets/mentorshow.png";
 import Teasquare from "../assets/teasquare.png";
-import TestimonialCard from "./TestimonialCard.astro";
+import OnboardMe from "../assets/onboard-me.png";
+import TestimonialsCarousel, { type Testimonial } from "./TestimonialsCarousel";
 import { Badge } from "./ui/badge";
+
+const testimonials: Testimonial[] = [
+  {
+    description: `Nous avons collaboré avec Charles sur onboard-me et l'expérience a été très agréable du début à la fin. Son expertise technique, la clarté de son processus et sa réactivité permettent d'avancer sereinement, avec des conseils pertinents à chaque étape. Simple et efficace, il enlève une vraie charge mentale tout au long du projet.`,
+    name: "Vincent",
+    company: "Onboard-me",
+    job: "Motion Designer",
+    image: OnboardMe.src,
+  },
+  {
+    description: `Excellente prestation de Charles.
+En prime d'un travail de qualité, Charles a une compréhension fine des projets et une communication aisée qui permet une collaboration à la hauteur de nos espérances.
+Je recommande sans hésiter !`,
+    name: "Ludovic",
+    company: "Figue.io",
+    job: "Chef de projet",
+    image: Figue.src,
+  },
+  {
+    description: `Nous avons eu le plaisir de collaborer avec Charles sur un projet de développement impliquant une stack technique variée. Volontaire, disponible et efficace, il a su s'adapter aux besoins de l'équipe et contribuer activement à l'avancement du projet. Son sérieux et sa capacité d'intégration ont été appréciés.`,
+    name: "Benjamin",
+    company: "Mentorshow",
+    job: "COO",
+    image: Mentorshow.src,
+  },
+  {
+    description: `D'un professionnalisme irréprochable !
+A l'écoute sur l'ensemble de notre projet.
+Pédagogique dans l'explication des possibles.
+Une vraie réussite dans notre collaboration.
+Merci !`,
+    name: "Jules",
+    company: "Air Rental",
+    job: "Directeur",
+    image: AirRental.src,
+  },
+  {
+    description: `Sa maîtrise technique est impressionnante, et il excelle également dans la gestion de l'hébergement, offrant un accompagnement de qualité.
+Professionnel et compétent, il est hautement recommandé pour tout projet de développement, offrant une solution complète et fiable.`,
+    name: "Killian",
+    company: "Teasquare",
+    job: "Fondateur",
+    image: Teasquare.src,
+  },
+  
+  
+  
+];
 ---
 
 <div class="bg-neutral-950 py-16 md:py-32 px-4 md:px-16 flex flex-col justify-center items-center gap-10 md:gap-20">
@@ -13,42 +62,5 @@ import { Badge } from "./ui/badge";
     <h2 class="text-center font-display text-3xl md:text-5xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Ce que disent nos clients</h2>
     <p class="text-lg text-white/70 font-normal text-center">Des résultats, mais surtout des relations humaines réussies</p>
   </div>
-  <div class="flex flex-wrap justify-center items-start gap-4 md:gap-8 max-w-[1400px] relative px-4">
-    <div class="absolute left-1/2 top-1/2 -translate-1/2 rounded-full blur-[200px] w-full md:w-[768px] h-[768px] bg-radial from-20% from-[#BD66FE] via-40% via-[#5C3AD8] to-[57%] to-[#5C3AD800]" />
-    <TestimonialCard
-      description=`D'un professionnalisme irréprochable !
-      A l'écoute sur l'ensemble de notre projet.
-      Pédagogique dans l'explication des possibles.
-      Une vraie réussite dans notre collaboration.
-      Merci !`
-      name="Jules"
-      company="Air Rental"
-      job="Directeur"
-      image={AirRental.src}
-    />
-    <TestimonialCard
-      description=`Sa maîtrise technique est impressionnante, et il excelle également dans la gestion de l'hébergement, offrant un accompagnement de qualité.
-      Professionnel et compétent, il est hautement recommandé pour tout projet de développement, offrant une solution complète et fiable.`
-      name="Killian"
-      company="Teasquare"
-      job="Fondateur"
-      image={Teasquare.src}
-    />
-    <TestimonialCard
-      description=`Excellente prestation de Charles.
-      En prime d'un travail de qualité, Charles a une compréhension fine des projets et une communication aisée qui permet une collaboration à la hauteur de nos espérances.
-      Je recommande sans hésiter !`
-      name="Ludovic"
-      company="Figue.io"
-      job="Chef de projet"
-      image={Figue.src}
-    />
-    <TestimonialCard
-      description=`Nous avons eu le plaisir de collaborer avec Charles sur un projet de développement impliquant une stack technique variée. Volontaire, disponible et efficace, il a su s'adapter aux besoins de l'équipe et contribuer activement à l'avancement du projet. Son sérieux et sa capacité d'intégration ont été appréciés.`
-      name="Benjamin"
-      company="Mentorshow"
-      job="COO"
-      image={Mentorshow.src}
-    />
-  </div>
+  <TestimonialsCarousel testimonials={testimonials} client:load />
 </div>
