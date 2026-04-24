@@ -21,7 +21,7 @@ export type ProjectData = {
 export const projects: ProjectData[] = [
   {
     title: 'Onboard-me',
-    description: 'Plateforme de onboarding pour les entreprises',
+    description: 'Plateforme de onboarding pour les motion designers',
     stack: ['Tanstack', 'React', 'AdonisJS', 'TailwindCSS'],
     image: OnboardMe,
     link: 'https://onboard-me.com/',
