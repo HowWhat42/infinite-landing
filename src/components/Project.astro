@@ -1,7 +1,9 @@
 ---
 import { ChevronRightIcon } from "lucide-react";
+import { getLangFromUrl, useTranslations } from "../i18n";
 
 const { title, description, stack, link, image, variant = "screenshot" } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <div class="sticky bg-neutral-950 md:bg-transparent top-16 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-20 py-8 lg:py-12">
@@ -19,7 +21,7 @@ const { title, description, stack, link, image, variant = "screenshot" } = Astro
       </div>
     </div>
     <button class="cursor-pointer text-white underline-offset-4 hover:underline flex items-center gap-2">
-      <a href={link} target="_blank" class="font-medium text-sm lg:text-base">Découvrir le projet</a>
+      <a href={link} target="_blank" class="font-medium text-sm lg:text-base">{t.projectsSection.projectLink}</a>
       <ChevronRightIcon size={20} className="lg:w-6 lg:h-6" />
     </button>
   </div>

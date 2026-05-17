@@ -1,24 +1,39 @@
+---
+import { getLangFromUrl, getLocalizedPath, useTranslations } from "../i18n";
+
+const SITE = "https://infinite-lab.com";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const frUrl = SITE + getLocalizedPath(Astro.url.pathname, "fr");
+const enUrl = SITE + getLocalizedPath(Astro.url.pathname, "en");
+const canonical = lang === "en" ? enUrl : frUrl;
+---
+
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Infinite Lab - Développement Web sur Mesure</title>
-		<meta name="description" content="Agence de développement web spécialisée dans la création de solutions digitales sur mesure. Expertise en React, Node.js et architectures modernes." />
-		<meta name="keywords" content="développement web, solutions digitales, React, Node.js, applications web, création site internet" />
+		<title>{t.meta.title}</title>
+		<meta name="description" content={t.meta.description} />
 		<meta name="robots" content="index, follow" />
-		<meta property="og:title" content="Infinite Lab - Développement Web sur Mesure" />
-		<meta property="og:description" content="Agence de développement web spécialisée dans la création de solutions digitales sur mesure. Expertise en React, Node.js et architectures modernes." />
+		<meta property="og:title" content={t.meta.title} />
+		<meta property="og:description" content={t.meta.description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://infinite-lab.com" />
+		<meta property="og:url" content={canonical} />
 		<meta property="og:image" content="/og-image.png" />
+		<meta property="og:locale" content={lang === "en" ? "en_US" : "fr_FR"} />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Infinite Lab - Développement Web sur Mesure" />
-		<meta name="twitter:description" content="Agence de développement web spécialisée dans la création de solutions digitales sur mesure." />
+		<meta name="twitter:title" content={t.meta.title} />
+		<meta name="twitter:description" content={t.meta.description} />
 		<meta name="twitter:image" content="/og-image.png" />
-		<link rel="canonical" href="https://infinite-lab.com" />
+		<link rel="canonical" href={canonical} />
+		<link rel="alternate" hreflang="fr" href={frUrl} />
+		<link rel="alternate" hreflang="en" href={enUrl} />
+		<link rel="alternate" hreflang="x-default" href={frUrl} />
 	</head>
 	<body class="bg-zinc-950">
 		<slot />

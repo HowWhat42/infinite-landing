@@ -2,20 +2,31 @@
 import logo from "../assets/logo.png";
 import { Button } from "./ui/button";
 import { MenuIcon, XIcon } from "lucide-react";
+import { getLangFromUrl, getLocalizedPath, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const frPath = getLocalizedPath(Astro.url.pathname, "fr");
+const enPath = getLocalizedPath(Astro.url.pathname, "en");
 ---
 
 <div id="mainNav" class="w-fit sticky top-8 z-30 flex items-center justify-between bg-navbar stroke-navbar p-1.5 pl-4 gap-4 md:gap-14 mt-4 mx-auto rounded-2xl transition-transform duration-300">
   <img class="h-5 md:h-6" src={logo.src} alt="logo-navbar" fetchpriority="high" />
   <div class="hidden md:flex items-center gap-2">
-    <Button variant="link" data-section="services">Expertises</Button>
-    <Button variant="link" data-section="projects">Réalisations</Button>
-    <Button variant="link" data-section="me">À propos</Button>
-    <Button variant="link" data-section="faq">FAQ</Button>
-    <Button variant="link" data-section="contact">Contact</Button>
+    <Button variant="link" data-section="services">{t.nav.services}</Button>
+    <Button variant="link" data-section="projects">{t.nav.projects}</Button>
+    <Button variant="link" data-section="me">{t.nav.me}</Button>
+    <Button variant="link" data-section="faq">{t.nav.faq}</Button>
+    <Button variant="link" data-section="contact">{t.nav.contact}</Button>
   </div>
   <div class="flex items-center gap-4">
-    <Button className="hidden md:block" data-section="contact">Je lance mon projet</Button>
-    <p class="text-white font-display md:hidden">Infinite Lab</p>
+    <div class="hidden md:flex items-center gap-1 text-sm font-display">
+      <a href={frPath} aria-current={lang === "fr" ? "true" : undefined} class:list={["px-1.5 py-0.5 rounded transition-colors", lang === "fr" ? "text-white" : "text-white/40 hover:text-white/70"]}>FR</a>
+      <span class="text-white/20">|</span>
+      <a href={enPath} aria-current={lang === "en" ? "true" : undefined} class:list={["px-1.5 py-0.5 rounded transition-colors", lang === "en" ? "text-white" : "text-white/40 hover:text-white/70"]}>EN</a>
+    </div>
+    <Button className="hidden md:block" data-section="contact">{t.nav.cta}</Button>
+    <p class="text-white font-display md:hidden">{t.nav.company}</p>
     <button id="menuButton" class="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors">
       <MenuIcon className="w-6 h-6 text-white" />
     </button>
@@ -29,12 +40,17 @@ import { MenuIcon, XIcon } from "lucide-react";
       <XIcon className="w-6 h-6 text-white" />
     </button>
   </div>
-  <Button variant="link" className="text-xl" data-section="services">Expertises</Button>
-  <Button variant="link" className="text-xl" data-section="projects">Réalisations</Button>
-  <Button variant="link" className="text-xl" data-section="me">À propos</Button>
-  <Button variant="link" className="text-xl" data-section="faq">FAQ</Button>
-  <Button variant="link" className="text-xl" data-section="contact">Contact</Button>
-  <Button size="lg" className="mt-4" data-section="contact">Je lance mon projet</Button>
+  <Button variant="link" className="text-xl" data-section="services">{t.nav.services}</Button>
+  <Button variant="link" className="text-xl" data-section="projects">{t.nav.projects}</Button>
+  <Button variant="link" className="text-xl" data-section="me">{t.nav.me}</Button>
+  <Button variant="link" className="text-xl" data-section="faq">{t.nav.faq}</Button>
+  <Button variant="link" className="text-xl" data-section="contact">{t.nav.contact}</Button>
+  <Button size="lg" className="mt-4" data-section="contact">{t.nav.cta}</Button>
+  <div class="flex items-center gap-3 text-lg font-display mt-2">
+    <a href={frPath} aria-current={lang === "fr" ? "true" : undefined} class:list={[lang === "fr" ? "text-white" : "text-white/40"]}>FR</a>
+    <span class="text-white/20">|</span>
+    <a href={enPath} aria-current={lang === "en" ? "true" : undefined} class:list={[lang === "en" ? "text-white" : "text-white/40"]}>EN</a>
+  </div>
 </div>
 
 <script>
@@ -72,8 +88,9 @@ import { MenuIcon, XIcon } from "lucide-react";
         // Smooth scroll to section on the current page
         element.scrollIntoView({ behavior: 'smooth' });
       } else {
-        // Section not on this page: navigate to landing anchor
-        window.location.href = `/#${section}`;
+        // Section not on this page: navigate to landing anchor, keeping locale
+        const localeBase = window.location.pathname.startsWith('/en') ? '/en/' : '/';
+        window.location.href = `${localeBase}#${section}`;
       }
     });
   });

@@ -1,36 +1,17 @@
 ---
 import { Accordion } from "./Accordion";
 import { Badge } from "./ui/badge";
+import { getLangFromUrl, useTranslations } from "../i18n";
 
-const data = [
-  {
-    title: "Quelles informations dois-je fournir pour obtenir un devis?",
-    description: "Une description de votre projet, vos objectifs, vos délais et, si possible, un budget indicatif. Pas d'inquiétude si tout n'est pas clair : nous vous accompagnons pour cadrer vos besoins.",
-  },
-  {
-    title: "Combien de temps prend un projet?",
-    description: "Cela dépend de la complexité du projet. Un site vitrine simple peut être livré en quelques semaines, tandis qu'un projet plus technique demandera plusieurs mois.",
-  },
-  {
-    title: "Est-il possible de demander des modifications en cours de projet?",
-    description: "Oui, nous prévoyons toujours une certaine flexibilité. Selon l'avancement, certaines modifications peuvent être intégrées sans impact, d'autres nécessiteront un ajustement du planning ou du devis.",
-  },
-  {
-    title: "Puis-je être remboursé si j'annule le projet?",
-    description: "L'annulation est possible à tout moment. Selon l'état d'avancement, un remboursement partiel pourra être envisagé, correspondant aux étapes non encore réalisées.",
-  },
-  {
-    title: "Et après la mise en ligne?",
-    description: "Nous restons à vos côtés. Maintenance, évolutions, support technique ou hébergement : vous pouvez compter sur nous pour assurer la continuité et la performance de votre site dans le temps.",
-  }
-]
+const t = useTranslations(getLangFromUrl(Astro.url));
+const data = t.faq.items;
 ---
 
 <div id="faq" class="bg-neutral-950 py-16 md:py-32 px-4 md:px-16 flex flex-col justify-center items-center gap-10 md:gap-20 rounded-b-[40px]">
   <div class="flex flex-col gap-4 justify-center items-center max-w-3xl px-4">
-    <Badge>FAQ</Badge>
-    <h1 class="text-center font-display text-3xl md:text-5xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">Questions fréquentes</h1>
-    <p class="text-lg text-white/70 font-normal text-center">Vous vous demandez encore si Infinite Lab est fait pour vous ?</p>
+    <Badge>{t.faq.badge}</Badge>
+    <h1 class="text-center font-display text-3xl md:text-5xl font-medium bg-gradient-to-r text-transparent from-[#BDB0F0] via-white to-[#AE5DC7] bg-clip-text">{t.faq.title}</h1>
+    <p class="text-lg text-white/70 font-normal text-center">{t.faq.description}</p>
   </div>
   
   <div class="w-full max-w-3xl space-y-4 px-4">

@@ -1,9 +1,9 @@
 import { AccordionContent, AccordionItem, AccordionTrigger, Accordion as BaseAccordion } from '@/components/ui/accordion'
 
 interface Props {
-  data: {
-    title: string
-    description: string
+  data: readonly {
+    readonly title: string
+    readonly description: string
   }[]
 }
 
